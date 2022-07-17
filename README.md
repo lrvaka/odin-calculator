@@ -78,7 +78,6 @@ I believe I have a strong grasp of Javascript concepts and syntax as of now. In 
 ## Author
 
 - Website - [Luke Vakasisikakala](https://lrvaka.com/)
-- Frontend Mentor - [@lrvaka](https://www.frontendmentor.io/profile/lrvaka)
 
 ## Acknowledgments
 
