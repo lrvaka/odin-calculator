@@ -25,17 +25,12 @@ const operate = (operator, a, b) => {
 const numberHandler = (value) => {
   if (screenValue == 0 && value == 0) return //no unnecessary long 0 inputs
   if (firstValue) {
-    //if first exists, set second
     secondValue += value
     screenValue = secondValue
   } else {
-    // set screenValue to typing
     screenValue += value
   }
   screen.textContent = screenValue
-  console.log({ firstValue })
-  console.log({ secondValue })
-  console.log({ operator })
 }
 
 const operatorHandler = (value) => {
@@ -48,18 +43,17 @@ const operatorHandler = (value) => {
   } else if (value === "=") {
     if (operator) {
       firstValue = operate(operator, +firstValue, +secondValue)
-      screenValue = firstValue // screen now equals firstValue
-      operator = "" // reset operator to nothing
-      secondValue = "" // second value to nothing
+      screenValue = firstValue
+      operator = ""
+      secondValue = ""
     } else if (secondValue) {
       screenValue = secondValue
       firstValue = secondValue
-      operator = "" // set new operator
+      operator = ""
       secondValue = ""
     } else {
-      //if there is no operator
       firstValue = screenValue
-      operator = "" // set new operator
+      operator = ""
       secondValue = ""
     }
   } else if (value === ".") {
@@ -71,24 +65,21 @@ const operatorHandler = (value) => {
     }
   } else if (secondValue) {
     if (operator) {
-      //previously set operator, not current one
       firstValue = operate(operator, +firstValue, +secondValue)
       screenValue = firstValue
-      operator = value // set new operator
-      secondValue = "" //set second value to zero
+      operator = value
+      secondValue = ""
     } else {
       firstValue = screenValue
       secondValue = ""
       operator = value
     }
   } else {
-    firstValue = screenValue //Set first value to the value onscreen
-    operator = value //Set the operator to value
+    firstValue = screenValue
+    operator = value
   }
   screen.textContent = screenValue
-  console.log({ firstValue })
-  console.log({ secondValue })
-  console.log({ operator })
+
 }
 
 buttons.addEventListener("click", (e) => {
