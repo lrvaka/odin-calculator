@@ -31,7 +31,7 @@ This is a solution to the [Calculator project on Odin Project](https://www.theod
 I started the project with the HTML structure. My goal was simplicity, using the least amount of HTML. All buttons shared the same class, with the specialty buttons having an extra class unique to their placement and color. I added a data-value attribute to each button with their corresponding values (1-9, +, -, *, etc.)
 ```html
  <div class="btn clear" data-value="CE">CE</div>
-            <div class="btn" data-value="%">%</div>
+ <div class="btn" data-value="%">%</div>
 ``` 
 which will be retrieved in the Javascript. I used CSS Grid to place each button accordingly, with some buttons spanning multiple rows and columns.
 
